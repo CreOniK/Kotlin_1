@@ -1,5 +1,3 @@
-@file:JvmName("KomKt")
-
 fun agoToText(seconds: Int): String {
     return when {
         seconds < 0 -> "некорректное время"
