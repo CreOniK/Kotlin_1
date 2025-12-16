@@ -1,14 +1,18 @@
-
 fun main() {
     var Thk = true
     var Ehe =""
-    var Cards =""
+    var Cards ="Mastercard"
+    var amount= 0.0
     do {
         println(" Введите свою карту!")
         Cards = readln().toString()
         println(" Введите cумму перевода!")
-        val amount = readln().toDouble()
-
+        try {
+            amount = readln().toDouble()
+        }catch (e: Exception)
+        {
+            println("Ошибка ввода числа")
+        }
         println(amount * CalculetedSum(Cards, amount))
         println("Еще 1 перевод?")
         Ehe = readln()
@@ -24,7 +28,7 @@ fun main() {
 }
 fun CalculetedSum(Cards:String,amount: Double): Double
 {
-    if (amount <= 0)
+    if (amount <= 0 )
     {
         println("⚠️ Ошибка! Сумма перевода должна быть больше 0 рублей.")
         return 0.0
@@ -42,3 +46,4 @@ fun CalculetedSum(Cards:String,amount: Double): Double
     }
 
 }
+
