@@ -28,10 +28,18 @@ fun main() {
 }
 fun CalculetedSum(Cards:String,amount: Double): Double
 {
-    if (amount <= 0 )
+    if (amount <= 0)
     {
         println("⚠️ Ошибка! Сумма перевода должна быть больше 0 рублей.")
         return 0.0
+    }
+    if (Cards == "VK Pay")
+    {
+    return 0.0
+    }
+    if (amount >35  && (Cards == "Visa"|| Cards == "Мир"))
+    {
+    return 0.0075
     }
     if (amount >300 && amount <75000 && (Cards == "Mastercard" || Cards =="Maestro"))
     {
@@ -39,10 +47,6 @@ fun CalculetedSum(Cards:String,amount: Double): Double
     }else
     {
         return 0.006
-    }
-    if (amount >35  && (Cards == "Visa"|| Cards == "Мир"))
-    {
-        return 0.0075
     }
 
 }
