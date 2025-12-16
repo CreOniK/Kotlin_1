@@ -1,9 +1,15 @@
 fun main()
 {
     var sum = 0
+    var SumBye = 0
     val postoan = false
     println("Введите сумму покупки")
-    var SumBye = readln().toInt()
+    try {
+         SumBye = readln().toInt()
+    }catch (e: Exception)
+    {
+        println("Ошибка ввода числа")
+    }
     sum = (SumBye - Skid(SumBye))
     if (postoan == true)
     {
